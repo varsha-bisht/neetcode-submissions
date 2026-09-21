@@ -1,0 +1,16 @@
+class Library:
+    books_available = 100    # Total books in library
+
+    @classmethod
+    def lend_books(cls, book: int) -> None:
+        cls.books_available -= book
+    
+    @classmethod
+    def return_books(cls, book: int) -> None:
+        cls.books_available += book
+
+print(f"Initial status: {Library.books_available} books available")
+Library.lend_books(30)
+print(f"After lending: {Library.books_available} books available")
+Library.return_books(10)
+print(f"After return: {Library.books_available} books available")
